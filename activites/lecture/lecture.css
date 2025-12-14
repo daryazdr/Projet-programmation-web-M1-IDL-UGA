@@ -1,0 +1,114 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    display: grid;
+    background-color: rgb(149, 37, 37);
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 20px;
+    margin: 0%;
+}
+
+h2 {
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    margin: 0%;
+    background-color: rgba(238, 238, 241, 0.582);
+}
+
+p {
+    font-size: larger;
+}
+
+/* Menu principal */
+nav#menu {
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+    padding: 10px 0;
+    margin: 0%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid goldenrod;
+}
+
+nav#menu a {
+    /* Eléments du menu*/
+    color: rgb(220, 20, 160);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-family: 'Britannic Bold', sans-serif;
+}
+
+nav#menu a:hover {
+    /* éléments quand on passe avec la souris */
+    color: chocolate;
+    background-color: chartreuse;
+}
+
+.contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: none;
+    padding: 20px;
+    background-color: rgba(238, 238, 241, 0.582);
+}
+
+.paragraphe {
+    width: 90%;
+    padding: 20px;
+    margin: 5px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text_name {
+    width: 100px;
+    height: 60px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid rgba(108, 108, 194, 0.756);
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    border-top: 2px solid goldenrod;
+    background-color: rgba(108, 108, 194, 0.756);
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+.container {
+    min-width: 400px;
+    padding: 10px;
+    margin: 10px;
+    background: beige;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    zoom: 0.8;
+}
+
+button {
+    cursor: pointer;
+    font-size: larger;
+    height: min-content;
+    width: min-content;
+    padding: 5px 10px;
+    margin: 5px;
+}
