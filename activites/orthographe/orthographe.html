@@ -1,111 +1,98 @@
 <!DOCTYPE html>
-<html>
+    <html>
+        <head>
+            <title>Exercices d'Orthographe</title>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" type="text/css" href="ortho_css.css" />
+        </head>
+        <body>
 
-<head>
-    <title>HTML & CSS</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="orthographe.css" />
-</head>
+            <header>
+                <h1>Exercices de français</h1>
+            </header>
 
-<body>
+            <nav id="menu">
+                <div class="menu"><a href="accueil.html">Accueil</a></div>
+                <div class="menu"><a href="grammaire.html">Grammaire</a></div>
+                <div class="menu"><a href="vocabulaire.html">Vocabulaire</a></div>
+                <div class="menu"><a href="conjugaison.html">Conjugaison</a></div>
+                <div class="menu"><a href="orthographe.html">Orthographe</a></div>
+                <div class="menu"><a href="">jsp</a></div>
+            </nav>
 
-    <header>
-        <h1>Exercices de français</h1>
-    </header>
+            <h2>Orthographe: Dictée</h2>
 
-    <nav id="menu">
-        <div class="menu"><a href="../../index.html">Accueil</a></div>
-        <div class="menu"><a href="../grammaire/grammaire.html">Grammaire</a></div>
-        <div class="menu"><a href="../vocabulaire/vocabulaire.html">Vocabulaire</a></div>
-        <div class="menu"><a href="../conjugaison/conjugaison.html">Conjugaison</a></div>
-        <div class="menu"><a href="../orthographe/orthographe.html">Orthographe</a></div>
-        <div class="menu"><a href="../lecture/lecture.html">Lecture</a></div>
-    </nav>
+                <div class="contenu">
+                    <div class="paragraphe">
+                        <div class="audio"><audio controls src="son\dictee.mp3"></audio></div>
+                        <div id="txtdict">
+                            <p>À droite, à gauche, ce ne sont que sapins. La rivière  <input type="text" id="reponse1">, capricieuse parfois, à travers un tapis d’ herbe où  <input type="text" id="reponse2"> les bêtes; 
+                                elle sort, ruisseau  <input type="text" id="reponse3">, des flancs du Donon, montagne jadis sacrée au sommet de laquelle on a relevé un  <input type="text" id="reponse4"> de ses ruines. 
+                                Cette petite rivière ne se contente pas de  <input type="text" id="reponse5"> les prés et les champs; car elle actionne, sur les pentes mêmes du Donon, 
+                                des  <input type="text" id="reponse6"> auxquelles, dans la vallée, succèdent trente autres scieries. Il faut entrer dans ces modestes  <input type="text" id="reponse7"> où les troncs sombres, 
+                                amenés de la montagne, se  <input type="text" id="reponse8">, dans une seule journée, en  <input type="text" id="reponse9"> de planches claires; les pieds dans la sciure blanche,  <input type="text" id="reponse10">, 
+                                odorante, on regarde sans se lasser le travail de l’artisan qui surveille et règle l’opération.
+                            </p>
+                        </div>
 
+                        <div class="button"><button onclick="verifierReponses()">Vérifier les réponses</button></div>
+                        
+                        <div class="test" id="verifier"></div> <!-- Affichage des erreurs -->
+                        <div class="test" id="score_total"></div>
 
-    <h2>Orthographe: Dictée</h2>
+                       <div class="button"><button onclick="toggleHelp()">Afficher de l'aide?</button></div>
 
-    <div class="contenu">
-        <div class="paragraphe">
-            <div class="audio"><audio controls src="son\dictee.mp3"></audio></div>
-            <div id="txtdict">
-                <p>À droite, à gauche, ce ne sont que sapins. La rivière court, capricieuse parfois, à travers un tapis
-                    d’ herbe où paissent les bêtes; elle sort, ruisseau cascadant, des flancs du Donon, montagne jadis
-                    sacrée au sommet de laquelle on a relevé un temple de ses ruines. (écoliers) Cette petite rivière ne
-                    se contente pas de féconder les prés et les champs; car elle actionne, sur les pentes mêmes du
-                    Donon, des scieries auxquelles, dans la vallée, succèdent trente autres scieries. Il faut entrer
-                    dans ces modestes hangars où les troncs sombres, amenés de la montagne, se débitent, dans une seule
-                    journée, en centaines de planches claires; les pieds dans la sciure blanche, fraîche, odorante, on
-                    regarde sans se lasser le travail de l’artisan qui surveille et règle l’opération.</p>
-            </div>
-            <div class="answer">
-                <h4>Points importants</h4>
-                <div class="points" id="ortho">
-                    <h5>Orthographe</h5>
-                    <ul>
-                        <li><span class="pointlist"><u><b>V</b></u>osgienne :</span> Attention à la majuscule, car il
-                            s'agit d'un adjectif dérivé d'un nom propre (Vosges).</li>
-                        <li><span class="pointlist">Paissent :</span> Verbe "paître", souvent mal orthographié. Il ne
-                            faut pas confondre avec "passent".</li>
-                        <li><span class="pointlist">Ruines :</span> Attention à l'orthographe et au pluriel.</li>
-                        <li><span class="pointlist">Scieries :</span> Se termine par "-rie", comme "boulangerie".</li>
-                    </ul>
+                        <div class="answer" id="answer">
+                            <h4>Points importants</h4>
+                            <div class="points"  id="ortho">
+                                <h5>Orthographe</h5>
+                                <ul>
+                                    <li><span class="pointlist"><u><b>V</b></u>osgienne :</span> Attention à la majuscule, car il s'agit d'un adjectif dérivé d'un nom propre (Vosges).</li>
+                                    <li><span class="pointlist">Paissent :</span> Verbe "paître", souvent mal orthographié. Il ne faut pas confondre avec "passent".</li>
+                                    <li><span class="pointlist">Ruines :</span> Attention à l'orthographe et au pluriel.</li>
+                                    <li><span class="pointlist">Scieries :</span> Se termine par "-rie", comme "boulangerie".</li>
+                                </ul>
+                            </div>
+                            <div class="points"  id="gram">
+                                <h5>Grammaire et Conjugaison</h5>
+                                <ul>
+                                    <li><span class="pointlist">À droite, à gauche :</span> La répétition de "à" est correcte et marque l'alternance.</li>
+                                    <li><span class="pointlist">Elle sort :</span> Verbe "sortir" au présent de l'indicatif, sujet "elle" (la rivière).</li>
+                                    <li><span class="pointlist">Il faut entrer :</span> Structure impersonnelle avec "falloir".</li>
+                                </ul>
+                            </div>
+                            <div class="points"  id="temps">
+                                <h5>Narration</h5>
+                                <p>Le temps le plus utilisé est le <span class="pointlist">présent de l'indicatif</span>. Il est employé pour donner un <span class="pointlist">effet de description</span> vivante et immédiate.</p>
+                            </div>
+                            <div class="points" id="phon">
+                                <h5>Phononologie</h5>
+                                <ul>
+                                    <li><span class="pointlist">Paissent (paître) / Passent (passer) :</span> Astuce : "paître" est lié aux animaux (comme "pâturage"), tandis que "passer" indique un mouvement.</li>
+                                    <li><span class="pointlist">Ses / Ces :</span> "Ses" indique la possession ("ses ruines" = les ruines qui lui appartiennent), "ces" est démonstratif.</li>
+                                </ul>
+                            </div>
+                            <div class="points" id="ponctu">
+                                <h5>Ponctuations</h5>
+                                <ul>
+                                    <li><span class="pointlist">Le point-virgule</span> est bien utilisé pour séparer des propositions en relation étroite.</li>
+                                    <li><span class="pointlist">Les virgules</span> marquent des pauses importantes pour le rythme du texte.</li>
+                                </ul>
+                            </div>
+                            <div class="points" id="vocab">
+                                <h5>Vocabulaire et expressions</h5>
+                                <ul>
+                                    <li><span class="pointlist">Ruisseau cascadant :</span> Un ruisseau qui fait des cascades, idée de mouvement et de vivacité.</li>
+                                    <li><span class="pointlist">Féconder :</span> Ici, métaphore pour dire que la rivière apporte de la fertilité aux terres.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="points" id="gram">
-                    <h5>Grammaire et Conjugaison</h5>
-                    <ul>
-                        <li><span class="pointlist">À droite, à gauche :</span> La répétition de "à" est correcte et
-                            marque l'alternance.</li>
-                        <li><span class="pointlist">Elle sort :</span> Verbe "sortir" au présent de l'indicatif, sujet
-                            "elle" (la rivière).</li>
-                        <li><span class="pointlist">Il faut entrer :</span> Structure impersonnelle avec "falloir".</li>
-                    </ul>
-                </div>
-                <div class="points" id="temps">
-                    <h5>Narration</h5>
-                    <p>Le temps le plus utilisé est le <span class="pointlist">présent de l'indicatif</span>. Il est
-                        employé pour donner un <span class="pointlist">effet de description</span> vivante et immédiate.
-                    </p>
-                </div>
-                <div class="points" id="phon">
-                    <h5>Phononologie</h5>
-                    <ul>
-                        <li><span class="pointlist">Paissent (paître) / Passent (passer) :</span> Astuce : "paître" est
-                            lié aux animaux (comme "pâturage"), tandis que "passer" indique un mouvement.</li>
-                        <li><span class="pointlist">Ses / Ces :</span> "Ses" indique la possession ("ses ruines" = les
-                            ruines qui lui appartiennent), "ces" est démonstratif.</li>
-                    </ul>
-                </div>
-                <div class="points" id="ponctu">
-                    <h5>Ponctuations</h5>
-                    <ul>
-                        <li><span class="pointlist">Le point-virgule</span> est bien utilisé pour séparer des
-                            propositions en relation étroite.</li>
-                        <li><span class="pointlist">Les virgules</span> marquent des pauses importantes pour le rythme
-                            du texte.</li>
-                    </ul>
-                </div>
-                <div class="points" id="vocab">
-                    <h5>Vocabulaire et expressions</h5>
-                    <ul>
-                        <li><span class="pointlist">Ruisseau cascadant :</span> Un ruisseau qui fait des cascades, idée
-                            de mouvement et de vivacité.</li>
-                        <li><span class="pointlist">Féconder :</span> Ici, métaphore pour dire que la rivière apporte de
-                            la fertilité aux terres.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <p>Source de la dictée et de sa correction: <a
-                href="https://www.ladictee.fr/contenu/certificat_d_etude/dictees_du_certificat_d_etude/dictee_audio_francais_certificat_etude_1958_Les_vieilles_choses.html">Site
-                Ladictée.fr</a></p>
-        <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich, Darya Zdrelyuk, Jiahong Zhang</p>
-        <p>Etudiantes de M1 IDL UGA, 2025</p>
-        <p>Nous contacter : etu-2025-llasic-nsm1id211@univ-grenoble-alpes.fr</p>
-    </footer>
-
-</body>
-
-</html>
+            <script src="javascript/orthojav.js"></script>
+        </body>
+        <footer>
+             <p>Source de la dictée et de sa correction: <a href="https://www.ladictee.fr/contenu/certificat_d_etude/dictees_du_certificat_d_etude/dictee_audio_francais_certificat_etude_1958_Les_vieilles_choses.html">Site Ladictée.fr</a></p>
+             <p>Nos noms</p>
+        </footer>
+    </html>
