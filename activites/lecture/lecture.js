@@ -14,4 +14,9 @@ containers.forEach(container => {
             if (next) container.insertBefore(next, item);
         }
     });
+
+    var scoreLecture = 0 // à mettre avant ton calcul de score et à actualiser avec la nouvelle valeur, puis:
+    // Stockage dans sessionStorage
+    const pageId = "Lecture";
+    localStorage.setItem(`score_${pageId}`, scoreLecture);
 });

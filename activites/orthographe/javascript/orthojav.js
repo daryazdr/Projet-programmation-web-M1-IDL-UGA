@@ -99,6 +99,8 @@ function verifierReponses() {
     scoreOrtho=compteRep
     const pageId = "Ortho";
 
-// Stockage dans sessionStorage
-sessionStorage.setItem(`score_${pageId}`, scoreOrtho);
+    // Stocker le score
+    localStorage.setItem(`score_${pageId}`, scoreOrtho);
 }
+
+

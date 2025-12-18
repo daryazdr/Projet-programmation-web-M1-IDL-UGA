@@ -26,12 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
       <p>Taux de réussite : ${Math.round((scoreGrammaire / total) * 100)}%</p>
     `;
 
-    var scoreOrtho = 0;
-    // script de votre page
-    scoreOrtho = scoreGrammaire; 
-    const pageId = "Ortho";
+    
     // Stockage dans sessionStorage
-    sessionStorage.setItem(`score_${pageId}`, scoreOrtho);
+    const pageId = "Gram";
+    localStorage.setItem(`score_${pageId}`, scoreGrammaire);
 
   });
 })

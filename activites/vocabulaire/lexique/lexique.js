@@ -54,4 +54,6 @@ dropzones.forEach(zone => {
 const pageId = "Lexique";
 const scoreLexique = 1;
 
-sessionStorage.setItem(`score_${pageId}`, scoreLexique);
+var scoreLex = 0 // à mettre avant ton calcul de score et à actualiser avec la nouvelle valeur, puis:
+// Stockage dans sessionStorage
+localStorage.setItem(`score_${pageId}`, scoreLex);
