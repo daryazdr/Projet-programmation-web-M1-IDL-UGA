@@ -30,6 +30,8 @@ function verifierReponses() {
     const bonneReponse9 = "centaines";
     const bonneReponse10 = "fraîche";
 
+    const scoreOrtho = 0;
+
     let compteRep = 10;
 
     let resultat = document.getElementById("verifier");
@@ -82,16 +84,17 @@ function verifierReponses() {
         }
         resultat.style.color = "#f44336";
     }
-if (compteRep===10){
-    total.innerHTML = `Félicitations! Tu as un score parfait! Passe à l'exercice suivant.`;
-    total.style.color = "#E0115F";
-} else {
-    if (compteRep >= 5) {
-    total.innerHTML = `Bravo! Tu as ${compteRep} bonnes réponses!`;
-    total.style.color = "#4CAF50";
+    if (compteRep===10){
+        total.innerHTML = `Félicitations! Tu as un score parfait! Passe à l'exercice suivant.`;
+        total.style.color = "#E0115F";
     } else {
-    total.innerHTML = `Dommage! Tu as ${compteRep} bonnes réponses, continue tes efforts!`;
-    total.style.color = "#FF5E4D";
+        if (compteRep >= 5) {
+        total.innerHTML = `Bravo! Tu as ${compteRep} bonnes réponses!`;
+        total.style.color = "#4CAF50";
+        } else {
+        total.innerHTML = `Dommage! Tu as ${compteRep} bonnes réponses, continue tes efforts!`;
+        total.style.color = "#FF5E4D";
+        }
     }
-}
+    scoreOrtho=compteRep
 }
