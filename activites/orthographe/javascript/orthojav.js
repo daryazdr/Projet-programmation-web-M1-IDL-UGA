@@ -30,7 +30,7 @@ function verifierReponses() {
     const bonneReponse9 = "centaines";
     const bonneReponse10 = "fraîche";
 
-    const scoreOrtho = 0;
+    var scoreOrtho = 0;
 
     let compteRep = 10;
 
@@ -97,4 +97,8 @@ function verifierReponses() {
         }
     }
     scoreOrtho=compteRep
+    const pageId = "Ortho";
+
+// Stockage dans sessionStorage
+sessionStorage.setItem(`score_${pageId}`, scoreOrtho);
 }
