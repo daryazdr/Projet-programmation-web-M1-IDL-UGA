@@ -1,7 +1,8 @@
+/*Communs au site*/
+
 body{
     font-family:'Trebuchet MS', sans-serif;
 }
-
 h1{
     display: grid;
     background-color: rgb(91, 35, 82);
@@ -11,7 +12,6 @@ h1{
     padding: 20px;
     margin:0%;
 }
-
 h2{
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -19,8 +19,27 @@ h2{
     margin:0%;
     background-color:beige;
 }
+.contenu{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin: none; 
+    padding: 20px; 
+    background-color:beige;
+}
+.paragraphe{
+    width: 90%;
+    padding: 20px;
+    margin: 5px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
 /* Menu principal */
+
+
 nav#menu {
     display: flex;
     justify-content: center;
@@ -49,28 +68,12 @@ nav#menu a:hover {
     text-shadow: 1px 1px 2px chocolate;
 }
 
-.contenu{
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    margin: none; 
-    padding: 20px; 
-    background-color:beige;
-}
+/*Spécifiques à index*/
 
-.paragraphe{
-    width: 90%;
-    padding: 20px;
-    margin: 5px;
-    border: 2px solid gold;
-    border-radius: 10px;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-#total{
+#total{ /* bouton du score global*/
     margin-bottom:20px;
 }
-#resetScore{
+#resetScore{ /* div de réinitialisation du score global*/
     display: flex; 
     flex-direction: column; 
     justify-content:center;
@@ -81,7 +84,7 @@ nav#menu a:hover {
     color: gray;
     border: 1px dotted whitesmoke;
 }
-#rezero{
+#rezero{ /* message de confirmation sur la page*/
     margin-top: 10px;
 }
 footer{

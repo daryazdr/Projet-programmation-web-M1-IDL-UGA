@@ -21,6 +21,7 @@ document.getElementById('total').addEventListener('click', () => {
     showGlobal();
 });
 
+//Remettre à zéro le score du site
 function reinitialiserScores() {
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
