@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+.activity-title {
+  padding: 6px 0;
+  border-radius: 10px;
+  color: #916b1e;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 10px auto 15px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 520px 1fr; /* 左边固定宽度 */
+  align-items: start;               /* 右边对齐顶部 */
+}
+
+
+/* 左边背景图 */
+.image-column {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;   /* ⭐ 添加这一行！*/
+  align-items: center;
+}
+
+
+.bg-wrapper {
+  width: 80%;      /* 自动随屏幕缩小 */
+  max-width: 800px;  /* 最大不超过 800px */
+  margin: 0 auto;
+  position: relative;
+}
+
+.bg {
+  width: 505px;     /* ⭐ 用你刚才看到的宽度 */
+  height: auto;
+  display: block;   /* ⭐ 必须加这个，避免 Safari 留奇怪空隙 */
+}
+
+
+/* 右边单词区 */
+.words-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 两列 */
+  gap: 35px; /* block 之间的距离 */
+  justify-items: center; /* 居中每个block */
+}
+
+
+/* 每个单词 + 空框组合 */
+.word-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 空框（未来用于接收拖拽） */
+.dropzone {
+  width: 130px;
+  height: 130px;
+  border: 3px dashed #bbb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* 单词标签 */
+.word {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 100px;
+  color: white;
+}
+
+.word-cahier  { background-color: #4A90E2; }
+.word-gomme   { background-color: #FF6F91; }
+.word-chat    { background-color: #F5A623; }
+.word-lampe   { background-color: #F8E71C; color: #333; }
+.word-horloge { background-color: #9B59B6; }
+
+/* 背景图下面那一排小图片 */
+.images-bar {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* 抠出来的小图片外观（先只是普通图片，还没拖拽） */
+.draggable-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 4px;
+}
+.dropzone.correct {
+  border-color: #55c94d;
+  background: rgba(120, 220, 120, 0.3);
+}
+
+.dropzone.wrong {
+  border-color: #d9534f;
+  background: rgba(255, 120, 120, 0.3);
+}
+.bg-wrapper {
+  position: relative;
+}
+
+/* 背景图上的目标点：定位后会隐藏 */
+.bg-target {
+  position: absolute;
+  width: inherit;  /* 由每个 id 自己定义 */
+  height: inherit;
+  border: none;          /* 🌟 透明，无框线 */
+  background: transparent; /* 🌟 透明背景 */
+  pointer-events: auto;  /* 仍然可接受拖拽 */
+}
+
+#t-cahier { 
+  top: 293px;
+  left: 265px;
+  height: 56px;
+  width: 114px;
+}
+#t-gomme {
+  top: 360px;
+  left: 235px;
+  height: 51px;
+  width: 81px;
+}
+#t-chat  { 
+  top: 388px;
+  left: px;
+  width: 168px;
+  height: 100px;
+}
+#t-lampe {
+  top: 170px;
+  left: 324px;
+  width: 135px;
+  height: 173px;
+}
+#t-horloge {
+  top: 28px;
+  left: 28px;
+  width: 97px;
+  height: 101px;
+}
+/* 背景图上的小图自动填满洞 */
+.bg-target img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto; /* 必须，让它能拖动 */
+}
+.bg-target img {
+  position: absolute;    /* 防止会撑高布局 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* 保持比例完美贴合洞 */
+  pointer-events: auto;  /* 可以拖 */
+}
