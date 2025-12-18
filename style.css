@@ -74,6 +74,7 @@ nav#menu a:hover {
     display: flex; 
     flex-direction: column; 
     justify-content:center;
+    align-items: center;
     margin: none; 
     padding: 20px; 
     font-style: italic;
@@ -81,10 +82,7 @@ nav#menu a:hover {
     border: 1px dotted whitesmoke;
 }
 #rezero{
-    display: flex; 
-    flex-direction: column; 
-    justify-content:center;
-    margin: none; 
+    margin-top: 10px;
 }
 footer{
     border-top: 2px solid goldenrod;
