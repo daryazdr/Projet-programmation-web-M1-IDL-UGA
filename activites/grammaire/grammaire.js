@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     conteneurResultats.innerHTML = `
       <h3>Résultat : ${scoreGrammaire}/${total}</h3>
-      <p>Taux de réussite : ${Math.round((score / total) * 100)}%</p>
+      <p>Taux de réussite : ${Math.round((scoreGrammaire / total) * 100)}%</p>
     `;
 
     var scoreOrtho = 0;
