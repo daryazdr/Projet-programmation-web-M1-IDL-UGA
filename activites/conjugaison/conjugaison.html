@@ -1,41 +1,250 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Exercices de Conjugaison</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="conjugaison.css" />
+    <title>My Prog WEB Project</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="java_project.js"></script>
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon_io/favicon.ico">
 </head>
-
 <body>
+    <main>
+         <header>
+                <h1>Exercices de français</h1>
+            </header>
 
-    <header>
-        <h1>Exercices de français</h1>
-    </header>
+        <nav id="menu">
+                <div class="menu"><a href="accueil.html">Accueil</a></div>
+                <div class="menu"><a href="grammaire.html">Grammaire</a></div>
+                <div class="menu"><a href="vocabulaire.html">Vocabulaire</a></div>
+                <div class="menu"><a href="conjugaison.html">Conjugaison</a></div>
+                <div class="menu"><a href="orthographe.html">Orthographe</a></div>
+                <div class="menu"><a href="lecture.html">Lecture</a></div>
+            </nav>
 
-    <nav id="menu">
-        <div class="menu"><a href="../../index.html">Accueil</a></div>
-        <div class="menu"><a href="../grammaire/grammaire.html">Grammaire</a></div>
-        <div class="menu"><a href="../vocabulaire/vocabulaire.html">Vocabulaire</a></div>
-        <div class="menu"><a href="../conjugaison/conjugaison.html">Conjugaison</a></div>
-        <div class="menu"><a href="../orthographe/orthographe.html">Orthographe</a></div>
-        <div class="menu"><a href="../lecture/lecture.html">Lecture</a></div>
-    </nav>
+        <h2>Conjugaison</h2>
 
+<!-- EXERCICE 1  -->
+<div class="paragraphe">
 
-    <h2>Conjuguons!</h2>
-    <div class="contenu">
-        <div class="paragraphe">
-            <p>contenu de la page</p>
-        </div>
+    <div class="consigne-section">
+        <span>Exercice 1 : </span>
+        <span>Choisis la bonne forme du verbe</span>
+    </div><br>
+
+    <div id="exerc1">
+
+        <div class="phrase">
+            1. Chaque jour, nous
+            <span class="rep_1">allons</span>
+            <span class="rep_1">irons</span>
+            <span class="rep_1">sommes allés</span>
+            à l’école.
+        </div><br>
+
+        <div class="phrase">
+            2. Hier, elle
+            <span class="rep_1">finit</span>
+            <span class="rep_1">a fini</span>
+            <span class="rep_1">as fini</span>
+            son travail très vite.
+        </div><br>
+
+        <div class="phrase">
+            3. Quand j’étais petit, je
+            <span class="rep_1">fais</span>
+            <span class="rep_1">faisait</span>
+            <span class="rep_1">faisais</span>
+            beaucoup de dessins.
+        </div><br>
+
+        <div class="phrase">
+            4. Demain, vous
+            <span class="rep_1">faites</span>
+            <span class="rep_1">ferez</span>
+            <span class="rep_1">faisez</span>
+            vos devoirs à la maison.
+        </div><br>
+
+        <div class="phrase">
+            5. Les fleurs que tu as
+            <span class="rep_1">cueilli</span>
+            <span class="rep_1">cueillies</span>
+            <span class="rep_1">cueillis</span>
+            sont très jolies.
+        </div><br>
+
     </div>
 
+
+    <div class="Score">
+        <button id="check1">Vérifie tes réponses</button>
+        <p id="result1"></p>
+    </div>
+
+</div>
+
+<!-- EXERCICE 2  -->
+<div class="paragraphe">
+
+  <div class="consigne-section">
+    <span>Exercice 2 : </span>
+    <span>À l’aide de l’exemple, complète avec le verbe « préparer ».</span>
+  </div><br>
+
+  <div id="exerc2">
+
+    <table class="conj-table">
+
+      <tr>
+        <th>Présent</th>
+        <th>Passé composé</th>
+      </tr>
+      <tr>
+        <td><strong>Je prépare</strong></td>
+        <td>
+          J’ <input id="ex2_pc" class="input-answer" type="text" placeholder="...">
+        </td>
+      </tr>
+
+  
+      <tr>
+        <th>Futur simple</th>
+        <th>Futur antérieur</th>
+      </tr>
+      <tr>
+        <td>
+          Je <input id="ex2_fs" class="input-answer" type="text" placeholder="...">
+        </td>
+        <td>
+          J’ <input id="ex2_fa" class="input-answer" type="text" placeholder="...">
+        </td>
+      </tr>
+
+
+      <tr>
+        <th>Imparfait</th>
+        <th>Plus-que-parfait</th>
+      </tr>
+      <tr>
+        <td>
+          Je <input id="ex2_imp" class="input-answer" type="text" placeholder="...">
+        </td>
+        <td>
+          J’ <input id="ex2_pqp" class="input-answer" type="text" placeholder="...">
+        </td>
+      </tr>
+
+      
+      <tr>
+        <th>Passé simple</th>
+        <th>Passé antérieur</th>
+      </tr>
+      <tr>
+        <td>
+          Je <input id="ex2_ps" class="input-answer" type="text" placeholder="...">
+        </td>
+        <td>
+          J’ <input id="ex2_pa" class="input-answer" type="text" placeholder="...">
+        </td>
+      </tr>
+
+    </table>
+
+    <div class="Score" style="margin-top:15px;">
+      <button id="check2">Vérifie tes réponses</button>
+      <p id="result2"></p>
+    </div>
+
+  </div>
+</div>
+
+<!--  EXERCICE 3 -->
+<div class="paragraphe">
+
+  <div class="consigne-section">
+    <span>Exercice 3 : </span>
+    <span>Choisis l’auxiliaire (être / avoir) et complète la phrase au passé composé.</span>
+  </div><br>
+
+  <div id="exerc3">
+
+   
+    <div class="phrase ex3-row example">
+      • MANGER →
+      <span class="ex3-aux disabled">être</span>
+      <span class="ex3-aux selected disabled">avoir</span>
+      → Il <input class="ex3-input input-answer" type="text" value="a mangé" disabled>
+    </div><br>
+
+    <!-- EXERCICES -->
+    <div class="phrase ex3-row" data-aux="avoir" data-pp="mange">
+      • FINIR →
+      <span class="ex3-aux">être</span>
+      <span class="ex3-aux">avoir</span>
+      → Il <input class="ex3-input input-answer" type="text" placeholder="...">
+    </div><br>
+
+    <div class="phrase ex3-row" data-aux="avoir" data-pp="ete">
+      • ÊTRE →
+      <span class="ex3-aux">être</span>
+      <span class="ex3-aux">avoir</span>
+      → Il <input class="ex3-input input-answer" type="text" placeholder="...">
+    </div><br>
+
+    <div class="phrase ex3-row" data-aux="avoir" data-pp="eu">
+      • AVOIR →
+      <span class="ex3-aux">être</span>
+      <span class="ex3-aux">avoir</span>
+      → Il <input class="ex3-input input-answer" type="text" placeholder="...">
+    </div><br>
+
+    <div class="phrase ex3-row" data-aux="avoir" data-pp="pris">
+      • PRENDRE →
+      <span class="ex3-aux">être</span>
+      <span class="ex3-aux">avoir</span>
+      → Il <input class="ex3-input input-answer" type="text" placeholder="...">
+    </div><br>
+
+    <div class="phrase ex3-row" data-aux="avoir" data-pp="danse">
+      • DANSER →
+      <span class="ex3-aux">être</span>
+      <span class="ex3-aux">avoir</span>
+      → Il <input class="ex3-input input-answer" type="text" placeholder="...">
+    </div><br>
+
+    <div class="phrase ex3-row" data-aux="etre" data-pp="venu">
+      • VENIR →
+      <span class="ex3-aux">être</span>
+      <span class="ex3-aux">avoir</span>
+      → Il <input class="ex3-input input-answer" type="text" placeholder="...">
+    </div><br>
+
+    <div class="Score">
+      <button id="check3">Vérifie tes réponses</button>
+      <p id="result3"></p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SCORE TOTAL -->
+<div class="paragraphe">
+  <div class="consigne-section">
+    Score total
+  </div>
+  <p id="globalScore" style="font-size:18px; font-weight:bold;"></p>
+</div>
+ 
+
+        
+    </main>
     <footer>
-        <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong Zhang</p>
-        <p>Etudiantes de M1 IDL UGA, 2025</p>
-        <p>Nous contacter : etu-2025-llasic-nsm1id211@univ-grenoble-alpes.fr</p>
+            <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong Zhang</p>
+            <p>Etudiantes de M1 IDL UGA, 2025</p>
+            <p>Nous contacter : etu-2025-llasic-nsm1id211@univ-grenoble-alpes.fr</p>
+             <div class="navig2">
+                <button onclick="location.href ='accueil.html';" id="back2main">Back to main page</button>
     </footer>
-
 </body>
-
 </html>
