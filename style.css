@@ -67,7 +67,9 @@ nav#menu a:hover {
     background: white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
+#total{
+    margin-bottom:20px;
+}
 footer{
     border-top: 2px solid goldenrod;
     background-color: rgba(108, 108, 194, 0.756);
