@@ -70,6 +70,22 @@ nav#menu a:hover {
 #total{
     margin-bottom:20px;
 }
+#resetScore{
+    display: flex; 
+    flex-direction: column; 
+    justify-content:center;
+    margin: none; 
+    padding: 20px; 
+    font-style: italic;
+    color: gray;
+    border: 1px dotted whitesmoke;
+}
+#rezero{
+    display: flex; 
+    flex-direction: column; 
+    justify-content:center;
+    margin: none; 
+}
 footer{
     border-top: 2px solid goldenrod;
     background-color: rgba(108, 108, 194, 0.756);

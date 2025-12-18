@@ -21,3 +21,18 @@ document.getElementById('total').addEventListener('click', () => {
     showGlobal();
 });
 
+function reinitialiserScores() {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('score_')) {
+            localStorage.removeItem(key); // Supprime chaque score
+        }
+    }
+    document.getElementById('rezero').textContent = "Score global : 0";
+    alert("Les scores ont été réinitialisés !");
+
+// Écouteur pour le bouton
+document.getElementById('reset').addEventListener('click', () => {
+    reinitialiserScores();
+});
+}

@@ -1,4 +1,4 @@
-function toggleHelp() {
+function toggleHelp() {  //cacher ou afficher les aides (qui sont un peu longues)
   hiddiv = document.getElementById("answer");
   if (hiddiv.style.display === "none") {
     hiddiv.style.display = "flex";
@@ -7,7 +7,7 @@ function toggleHelp() {
   }
 }
 
-function verifierReponses() {
+function verifierReponses() { //calcul du score de l'exercice
     const reponse1 = document.getElementById("reponse1").value;
     const reponse2 = document.getElementById("reponse2").value;
     const reponse3 = document.getElementById("reponse3").value;
@@ -30,17 +30,18 @@ function verifierReponses() {
     const bonneReponse9 = "centaines";
     const bonneReponse10 = "fraîche";
 
-    var scoreOrtho = 0;
+    var scoreOrtho = 0; // initialisation pour stockage en local
 
-    let compteRep = 10;
+    let compteRep = 10; //initialisation pour décompte des erreurs
 
-    let resultat = document.getElementById("verifier");
-    let total = document.getElementById("score_total");
+    let resultat = document.getElementById("verifier"); // récupération de la div d'affichage des vérifications
+    let total = document.getElementById("score_total"); //récupération de la div d'affichage du score d'exercice
 
+    // Si toutes les réponses sont correctes
     if (reponse1 === bonneReponse1 && reponse2 === bonneReponse2 && reponse3 === bonneReponse3 && reponse4 === bonneReponse4 && reponse5 === bonneReponse5 && reponse6 === bonneReponse6 && reponse7 === bonneReponse7 && reponse8 === bonneReponse8 && reponse9 === bonneReponse9 && reponse10 === bonneReponse10) {
         resultat.textContent = "Bravo ! Toutes les réponses sont correctes.";
         resultat.style.color = "#4CAF50";
-    } else {
+    } else { // comparaison des réponses une à une pour pouvoir afficher la bonne correction
         resultat.innerHTML = "Certaines réponses sont incorrectes. <br>";
         if (reponse1 !== bonneReponse1) {
             resultat.innerHTML += `La bonne réponse pour le 1er trou est : <strong>${bonneReponse1}</strong><br>`;
@@ -84,22 +85,23 @@ function verifierReponses() {
         }
         resultat.style.color = "#f44336";
     }
-    if (compteRep===10){
+    // Différents messages selon la performance sur l'exercice
+    if (compteRep===10){ //score parfait
         total.innerHTML = `Félicitations! Tu as un score parfait! Passe à l'exercice suivant.`;
         total.style.color = "#E0115F";
     } else {
-        if (compteRep >= 5) {
+        if (compteRep >= 5) { // mieux que la moyenne
         total.innerHTML = `Bravo! Tu as ${compteRep} bonnes réponses!`;
         total.style.color = "#4CAF50";
-        } else {
+        } else { // moins que la moyenne
         total.innerHTML = `Dommage! Tu as ${compteRep} bonnes réponses, continue tes efforts!`;
         total.style.color = "#FF5E4D";
         }
     }
+    // Pour stocker le score et l'ajouter aux autres pages sur l'accueil
     scoreOrtho=compteRep
     const pageId = "Ortho";
 
-    // Stocker le score
     localStorage.setItem(`score_${pageId}`, scoreOrtho);
 }
 

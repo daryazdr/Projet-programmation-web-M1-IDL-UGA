@@ -24,14 +24,14 @@
             <h2>Orthographe: Dictée</h2>
 
                 <div class="contenu">
-                    <div class="paragraphe">
-                        <div class="consigne">
+                    <div class="paragraphe"> <!-- divisions communes aux pages du site-->
+                        <div class="consigne"> <!-- Pour présenter les consignes-->
                             <p>Voici un enregistrement d'une dictée. Le texte sera lu plusieurs fois, écoute bien les consignes données et remplis le texte à trous.</p>
                             <p>Attention! Les majuscules, accents, espaces, tirets, apostrophes, etc. comptent! Il faut bien remplir la case parfaitement exactement.</p>
                             
                         </div>
-                        <div class="audio"><audio controls src="son\dictee.mp3"></audio></div>
-                        <div id="txtdict">
+                        <div class="audio"><audio controls src="son\dictee.mp3"></audio></div> <!--audio dans sa propre div pour le css sticky-->
+                        <div id="txtdict"> <!--identifié car nécessité d'etre précis pour le css et js-->
                             <p>À droite, à gauche, ce ne sont que sapins. La rivière  <input type="text" id="reponse1">, capricieuse parfois, à travers un tapis d’ herbe où  <input type="text" id="reponse2"> les bêtes; 
                                 elle sort, ruisseau  <input type="text" id="reponse3">, des flancs du Donon, montagne jadis sacrée au sommet de laquelle on a relevé un  <input type="text" id="reponse4"> de ses ruines. 
                                 Cette petite rivière ne se contente pas de  <input type="text" id="reponse5"> les prés et les champs; car elle actionne, sur les pentes mêmes du Donon, 
@@ -43,14 +43,14 @@
 
                         <div class="button"><button onclick="verifierReponses()">Vérifier les réponses</button></div>
                         
-                        <div class="test" id="verifier"></div> <!-- Affichage des erreurs -->
-                        <div class="test" id="score_total"></div>
+                        <div class="test" id="verifier"></div> <!-- div pour l'affichage des erreurs -->
+                        <div class="test" id="score_total"></div><!--div pour le score de la page (3 messages différents)-->
 
-                       <div class="button"><button onclick="toggleHelp()">Afficher de l'aide?</button></div>
+                       <div class="button"><button onclick="toggleHelp()">Afficher de l'aide?</button></div> <!-- Pour présenter les points difficiles du texte. -->
 
-                        <div class="answer" id="answer">
+                        <div class="answer" id="answer"><!--cachée au départ car long et plus pédagogique d'essayer sans aide au moins une fois -->
                             <h4>Points importants</h4>
-                            <div class="points"  id="ortho">
+                            <div class="points"  id="ortho"><!--chaque point a son id mais une classe commune, pour pouvoir les mettre en commun ou isoler selon les besoins-->
                                 <h5>Orthographe</h5>
                                 <ul>
                                     <li><span class="pointlist"><u><b>V</b></u>osgienne :</span> Attention à la majuscule, car il s'agit d'un adjectif dérivé d'un nom propre (Vosges).</li>
@@ -95,9 +95,9 @@
                         </div>
                     </div>
                 </div>
-            <script src="javascript/orthojav.js"></script>
+            <script src="javascript/orthojav.js"></script><!--chargement du script en fin d'HTML afin de ne pas provoquer d'erreurs d'ordre de chargement-->
         </body>
-        <footer>
+        <footer> <!--commun à toutes les pages du site afin d'être accessible à tout moment + source pour cet exercice-->
              <p>Source de la dictée et de sa correction: <a href="https://www.ladictee.fr/contenu/certificat_d_etude/dictees_du_certificat_d_etude/dictee_audio_francais_certificat_etude_1958_Les_vieilles_choses.html">Site Ladictée.fr</a></p>
              <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong Zhang</p>
              <p>Etudiantes de M1 IDL UGA, 2025</p>
