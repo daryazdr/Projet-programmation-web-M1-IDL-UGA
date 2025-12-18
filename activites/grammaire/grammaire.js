@@ -11,20 +11,27 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     boutonVerif.addEventListener('click', function() {
-    let score = 0;
+    let scoreGrammaire = 0;
     let total = Object.keys(reponseJuste).length;
 
     for (let question in reponseJuste) {
       const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
       if (selectedAnswer && selectedAnswer.value === reponseJuste[question]) {
-        score++;
+        scoreGrammaire++;
       }
     }
 
     conteneurResultats.innerHTML = `
-      <h3>Résultat : ${score}/${total}</h3>
+      <h3>Résultat : ${scoreGrammaire}/${total}</h3>
       <p>Taux de réussite : ${Math.round((score / total) * 100)}%</p>
     `;
+
+    var scoreOrtho = 0;
+    // script de votre page
+    scoreOrtho = scoreGrammaire; 
+    const pageId = "Ortho";
+    // Stockage dans sessionStorage
+    sessionStorage.setItem(`score_${pageId}`, scoreOrtho);
 
   });
 })
