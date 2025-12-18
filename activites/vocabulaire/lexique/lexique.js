@@ -7,8 +7,7 @@ draggableImages.forEach(img => {
     e.dataTransfer.setData("imgId", img.id);
   });
 });
-// 所有右侧框（dropzone）
-// 所有可以接收拖拽的框：右侧 dropzone + 左侧 bg-target
+
 const dropzones = document.querySelectorAll(".dropzone, .bg-target");
 
 
@@ -51,3 +50,8 @@ dropzones.forEach(zone => {
 
 
 });
+// score minimal pour l’activité Lexique
+const pageId = "Lexique";
+const scoreLexique = 1;
+
+sessionStorage.setItem(`score_${pageId}`, scoreLexique);
