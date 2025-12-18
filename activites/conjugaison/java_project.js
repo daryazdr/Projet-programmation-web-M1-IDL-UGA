@@ -153,3 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateGlobalScore();
 });
+ // Pour stocker le score et l'ajouter aux autres pages sur l'accueil
+    scoreConjug=score1 + score2 + score3
+    const pageId = "Conjug";
+
+    localStorage.setItem(`score_${pageId}`, scoreConjug);
