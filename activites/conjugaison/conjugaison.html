@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>Exercices de conjugaison</title>
 
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="conjugaison.css" />
+  <link rel="stylesheet" href="../../style.css"> <!-- Styles globaux -->
+  <link rel="stylesheet" href="conjugaison.css" /> <!-- Styles spécifiques -->
   <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon_io/favicon.ico">
 </head>
 
@@ -16,7 +16,7 @@
       <h1>Exercices de français</h1>
     </header>
 
-    <nav id="menu">
+    <nav id="menu"> <!-- Menu de navigation -->
       <div class="menu"><a href="../../index.html">Accueil</a></div>
       <div class="menu"><a href="../grammaire/grammaire.html">Grammaire</a></div>
       <div class="menu"><a href="../vocabulaire/vocabulaire.html">Vocabulaire</a></div>
@@ -31,7 +31,7 @@
     <div class="contenu">
       <div class="paragraphe">
 
-        <div class="consigne-section">
+        <div class="consigne-section"> <!-- Consigne -->
           <span>Exercice 1 : </span>
           <span>Choisis la bonne forme du verbe</span>
         </div><br>
@@ -40,7 +40,7 @@
 
           <div class="phrase">
             1. Chaque jour, nous
-            <span class="rep_1">allons</span>
+            <span class="rep_1">allons</span> <!-- Réponse possible -->
             <span class="rep_1">irons</span>
             <span class="rep_1">sommes allés</span>
             à l’école.
@@ -81,9 +81,9 @@
         </div>
 
 
-        <div class="Score">
-          <button id="check1">Vérifie tes réponses</button>
-          <p id="result1"></p>
+        <div class="Score"> <!-- Zone de correction -->
+          <button id="check1">Vérifie tes réponses</button> <!-- Lance la vérification -->
+          <p id="result1"></p> <!-- Résultat affiché -->
         </div>
 
       </div>
@@ -91,14 +91,14 @@
       <!-- EXERCICE 2  -->
       <div class="paragraphe">
 
-        <div class="consigne-section">
+        <div class="consigne-section"> <!-- Consigne -->
           <span>Exercice 2 : </span>
           <span>À l’aide de l’exemple, complète avec le verbe « préparer ».</span>
         </div><br>
 
         <div id="exerc2">
 
-          <table class="conj-table">
+          <table class="conj-table"> <!-- Tableau des temps -->
 
             <tr>
               <th>Présent</th>
@@ -166,7 +166,7 @@
       <!--  EXERCICE 3 -->
       <div class="paragraphe">
 
-        <div class="consigne-section">
+        <div class="consigne-section"> <!-- Consigne -->
           <span>Exercice 3 : </span>
           <span>Choisis l’auxiliaire (être / avoir) et complète la phrase au passé composé.</span>
         </div><br>
@@ -181,7 +181,8 @@
             → Il <input class="ex3-input input-answer" type="text" value="a mangé" disabled>
           </div><br>
 
-          <!-- EXERCICES -->
+          <!-- data-aux : auxiliaire correct / data-pp : participe passé -->
+
           <div class="phrase ex3-row" data-aux="avoir" data-pp="fini">
             • FINIR →
             <span class="ex3-aux">être</span>
