@@ -1,4 +1,7 @@
-// 让所有小图可拖动
+const PAGE_ID = "Lexique";
+let scorePage = 0;
+let totalZones = 0;
+
 const draggableImages = document.querySelectorAll(".draggable-img");
 
 draggableImages.forEach(img => {
@@ -46,14 +49,11 @@ dropzones.forEach(zone => {
     } else {
       zone.classList.add("wrong");
     }
+    calculerScoreFinal();
   });
 
-
 });
-// score minimal pour l’activité Lexique
-const pageId = "Lexique";
-const scoreLexique = 1;
-
-var scoreLex = 0 // à mettre avant ton calcul de score et à actualiser avec la nouvelle valeur, puis:
-// Stockage dans sessionStorage
-localStorage.setItem(`score_${pageId}`, scoreLex);
+function calculerScoreFinal() {
+  const score = document.querySelectorAll(".dropzone.correct").length;
+  localStorage.setItem("score_Lexique", score);
+}
