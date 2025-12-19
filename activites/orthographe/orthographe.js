@@ -1,10 +1,10 @@
 function toggleHelp() {  //cacher ou afficher les aides (qui sont un peu longues)
-  hiddiv = document.getElementById("answer");
-  if (hiddiv.style.display === "none") {
-    hiddiv.style.display = "flex";
-  } else {
-    hiddiv.style.display = "none";
-  }
+    hiddiv = document.getElementById("answer");
+    if (hiddiv.style.display === "none") {
+        hiddiv.style.display = "flex";
+    } else {
+        hiddiv.style.display = "none";
+    }
 }
 
 function verifierReponses() { //calcul du score de l'exercice
@@ -86,23 +86,43 @@ function verifierReponses() { //calcul du score de l'exercice
         resultat.style.color = "#f44336";
     }
     // Différents messages selon la performance sur l'exercice
-    if (compteRep===10){ //score parfait
+    if (compteRep === 10) { //score parfait
         total.innerHTML = `Félicitations! Tu as un score parfait! Passe à l'exercice suivant.`;
         total.style.color = "#E0115F";
     } else {
         if (compteRep >= 5) { // mieux que la moyenne
-        total.innerHTML = `Bravo! Tu as ${compteRep} bonnes réponses!`;
-        total.style.color = "#4CAF50";
+            total.innerHTML = `Bravo! Tu as ${compteRep} bonnes réponses!`;
+            total.style.color = "#4CAF50";
         } else { // moins que la moyenne
-        total.innerHTML = `Dommage! Tu as ${compteRep} bonnes réponses, continue tes efforts!`;
-        total.style.color = "#FF5E4D";
+            total.innerHTML = `Dommage! Tu as ${compteRep} bonnes réponses, continue tes efforts!`;
+            total.style.color = "#FF5E4D";
         }
     }
     // Pour stocker le score et l'ajouter aux autres pages sur l'accueil
-    scoreOrtho=compteRep
-    const pageId = "Ortho";
-
-    localStorage.setItem(`score_${pageId}`, scoreOrtho);
+    scoreOrthographe = compteRep;
+    localStorage.setItem('score_Orthographe', scoreOrthographe);
 }
 
+// Chargement du score au démarrage
+document.addEventListener("DOMContentLoaded", () => {
+    const savedScore = localStorage.getItem("score_Orthographe");
+    if (savedScore !== null) {
+        document.getElementById("score_total").textContent =
+            `Score enregistré : ${savedScore} / 10`;
+    }
+});
+
+// Réinitialisation
+document.getElementById("resetPage").addEventListener("click", () => {
+    localStorage.removeItem("score_Orthographe");
+
+    document.getElementById("score_total").textContent =
+        "Score réinitialisé.";
+
+    document.getElementById("verifier").textContent = "";
+
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`reponse${i}`).value = "";
+    }
+});
 

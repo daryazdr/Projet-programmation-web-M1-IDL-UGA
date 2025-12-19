@@ -5,9 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateGlobalScore() {
     const p = document.getElementById("globalScore");
+    const total = score1 + score2 + score3;
+
     if (p) {
-      p.textContent = `Score total : ${score1 + score2 + score3} / ${MAX_TOTAL}`;
+      p.textContent = `Score total : ${total} / ${MAX_TOTAL}`;
     }
+
+    // sauvegarde pour l'accueil
+    localStorage.setItem("score_Conjugaison", total);
   }
 
   function norm(str) {
@@ -64,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      resultP.textContent = `Your score: ${score}/${correctIndex.length}`;
+      resultP.textContent = `Score : ${score}/${correctIndex.length}`;
       score1 = score;
       updateGlobalScore();
     });
@@ -104,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      resultP.textContent = `Your score: ${score}/${ids.length}`;
+      resultP.textContent = `Score : ${score}/${ids.length}`;
       score2 = score;
       updateGlobalScore();
     });
@@ -145,16 +150,42 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      resultP.textContent = `Your score: ${score}/${rows.length}`;
+      resultP.textContent = `Score : ${score}/${rows.length}`;
       score3 = score;
       updateGlobalScore();
     });
   })();
 
+  // ===== chargement du score enregistré =====
+  const saved = localStorage.getItem("score_Conjugaison");
+  if (saved !== null) {
+    document.getElementById("globalScore").textContent =
+      `Score total : ${saved} / ${MAX_TOTAL}`;
+  }
+
+  // ===== reinitialisation =====
+  const resetBtn = document.getElementById("resetPage");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      score1 = 0;
+      score2 = 0;
+      score3 = 0;
+
+      localStorage.removeItem("score_Conjugaison");
+
+      updateGlobalScore();
+
+      document.querySelectorAll(".correct, .wrong, .selected").forEach(el =>
+        el.classList.remove("correct", "wrong", "selected")
+      );
+
+      document.querySelectorAll("input").forEach(i => i.value = "");
+
+      document.getElementById("result1").textContent = "";
+      document.getElementById("result2").textContent = "";
+      document.getElementById("result3").textContent = "";
+    });
+  }
+
   updateGlobalScore();
 });
- // Pour stocker le score et l'ajouter aux autres pages sur l'accueil
-    scoreConjug=score1 + score2 + score3
-    const pageId = "Conjug";
-
-    localStorage.setItem(`score_${pageId}`, scoreConjug);

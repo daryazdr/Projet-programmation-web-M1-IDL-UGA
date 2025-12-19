@@ -1,39 +1,33 @@
+const pages = [
+    "Grammaire",
+    "Vocabulaire",
+    "Conjugaison",
+    "Orthographe",
+    "Lecture"
+];
+
 // Fonction pour calculer le score global
 function calculerScoreGlobal() {
-    let scoreGlobal = 0;
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key.startsWith('score_')) {
-            scoreGlobal += parseInt(localStorage.getItem(key));
+    let total = 0;
+
+    pages.forEach(page => {
+        const score = localStorage.getItem(`score_${page}`);
+        if (score !== null) {
+            total += parseInt(score);
         }
-    }
-    return scoreGlobal;
-}
-
-// Fonction pour afficher le score global
-function showGlobal() {
-    const scoreGlobal = calculerScoreGlobal();
-    document.getElementById('score-global').textContent = `Tu as ${scoreGlobal} bonnes réponses!`;
-}
-
-// Écouteur pour le bouton
-document.getElementById('total').addEventListener('click', () => {
-    showGlobal();
-});
-
-//Remettre à zéro le score du site
-function reinitialiserScores() {
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key.startsWith('score_')) {
-            localStorage.removeItem(key); // Supprime chaque score
-        }
-    }
-    document.getElementById('rezero').textContent = "Score global : 0";
-    alert("Les scores ont été réinitialisés !");
-
-    // Écouteur pour le bouton
-    document.getElementById('reset').addEventListener('click', () => {
-        reinitialiserScores();
     });
+
+    // Afficher le score immédiatement
+    document.getElementById("score-global").textContent =
+        `Tu as ${total} bonnes réponses !`;
+}
+
+// Réinitialiser tous les scores
+function reinitialiserScores() {
+    pages.forEach(page => {
+        localStorage.removeItem(`score_${page}`);
+    });
+
+    document.getElementById("score-global").textContent =
+        "Tu as 0 bonnes réponses !";
 }

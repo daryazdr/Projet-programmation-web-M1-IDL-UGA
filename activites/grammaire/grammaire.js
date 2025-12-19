@@ -1,36 +1,43 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const conteneurResultats = document.getElementById('resultats');
-    const boutonVerif = document.getElementById('verifier');
+document.addEventListener("DOMContentLoaded", () => {
+  const PAGE_ID = "Grammaire";
+  let scorePage = 0;
 
-    const reponseJuste = {
-        q1 : 'coi',
-        q2 : 'sujet',
-        q3 : 'verbe',
-        q4 : 'cod',
-        q5 : 'sujet',
-    };
+  const bonnesReponses = {
+    q1: "coi",
+    q2: "sujet",
+    q3: "verbe",
+    q4: "cod",
+    q5: "sujet"
+  };
 
-    boutonVerif.addEventListener('click', function() {
-    let scoreGrammaire = 0;
-    let total = Object.keys(reponseJuste).length;
+  function sauvegarderScore() {
+    localStorage.setItem(`score_${PAGE_ID}`, scorePage);
+  }
 
-    for (let question in reponseJuste) {
-      const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
-      if (selectedAnswer && selectedAnswer.value === reponseJuste[question]) {
-        scoreGrammaire++;
-      }
-    }
+  function chargerScore() {
+    const saved = localStorage.getItem(`score_${PAGE_ID}`);
+    if (saved !== null) scorePage = parseInt(saved);
+  }
 
-    conteneurResultats.innerHTML = `
-      <h3>Résultat : ${scoreGrammaire}/${total}</h3>
-      <p>Taux de réussite : ${Math.round((scoreGrammaire / total) * 100)}%</p>
-    `;
+  document.getElementById("verifier").addEventListener("click", () => {
+    scorePage = 0;
+    Object.keys(bonnesReponses).forEach(q => {
+      const checked = document.querySelector(`input[name="${q}"]:checked`);
+      if (checked && checked.value === bonnesReponses[q]) scorePage++;
+    });
 
-    
-    // Stockage dans sessionStorage
-    const pageId = "Gram";
-    localStorage.setItem(`score_${pageId}`, scoreGrammaire);
+    document.getElementById("resultats").innerHTML =
+      `<h3>Résultat : ${scorePage}/5</h3>`;
 
+    sauvegarderScore();
   });
-})
 
+  document.getElementById("resetPage").addEventListener("click", () => {
+    scorePage = 0;
+    localStorage.removeItem(`score_${PAGE_ID}`);
+    document.getElementById("message-reset").textContent =
+      "Score de Grammaire réinitialisé !";
+  });
+
+  chargerScore();
+});
