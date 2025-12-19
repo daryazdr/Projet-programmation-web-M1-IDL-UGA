@@ -25,11 +25,15 @@
     margin-bottom: 15px;
 }
 
-.exercice-header img {
+
+.paragraphe .exercice-header img {
     width: 120px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    margin: 0;
+    max-width: none;
 }
 
 .container {

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Débutons en Français</title>
+    <title>Accueil : Débutons en Français</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -23,34 +23,42 @@
     </nav>
 
 
-    <h2>Accueil</h2>
+    <h2>Bienvenue !</h2>
     <div class="contenu">
         <div class="paragraphe"> <!--Présentation du site-->
             <p>Bienvenue sur ce site d'aide aux premiers pas en Français!</p>
-            <p>Ici tu pourras retrouver plein d'exercices pour t'améliorer ou juste t'amuser selon tes difficultés et à ton rythme.
-                Chaque page te proposera un score pour sa discipline, et en revenant ici régulièrement, tu pourras voir les points s'accumuler!
+            <img src="assets/image/cahier d'ecriture.png" alt="cahier d'ecriture enfants">
+            <p>Ici tu pourras retrouver plein d'exercices pour t'améliorer ou juste t'amuser selon tes difficultés et à
+                ton rythme.
+                Chaque page te proposera un score pour sa discipline, et en revenant ici régulièrement, tu pourras voir
+                les points s'accumuler!
             </p>
             <p>Fais le plein de bonnes réponses pour progresser, à ton rythme, et amuse-toi bien!</p>
-
-
         </div>
-        <div class="contenu paragraphe"> <!--Score global-->
-            <p>Tu peux ici voir ton score global!</p>
+
+        <div class="paragraphe score-section"> <!--Score global-->
+            <p>Score global :</p>
             <div class="button" id="total"><button onclick="calculerScoreGlobal()">Calculer ton score</button></div>
-            <div id="score-global">Tu as... bonnes réponses!</div>
+            <div id="score-global">Clique sur le bouton pour découvrir ton score !</div>
         </div>
-        <div id="resetScore"> <!--Pour effacer le Score Global-->
-            <p>Tu veux recommencer depuis le début? Clique pour effacer ton score!</p>
+
+        <div class="paragraphe" id="resetScore"> <!--Pour effacer le Score Global-->
+            <p>Tu veux recommencer depuis le début ? Clique pour effacer ton score !</p>
             <button id="reset" onclick="reinitialiserScores()">Réinitialiser le score</button>
             <div id="rezero"></div>
         </div>
     </div>
-    <script src="index.js"></script>
-</body>
-<footer> <!--Sources et contacts-->
-        <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong Zhang</p>
+
+    <footer> <!--Sources et contacts-->
+        <p><strong>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong
+                Zhang</strong>
+        </p>
         <p>Etudiantes de M1 IDL UGA, 2025</p>
         <p>Nous contacter : etu-2025-llasic-nsm1id211@univ-grenoble-alpes.fr</p>
     </footer>
+
+    <script src="index.js"></script>
+
+</body>
 
 </html>

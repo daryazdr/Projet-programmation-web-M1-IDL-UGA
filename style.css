@@ -1,40 +1,73 @@
 /*Communs au site*/
 
-body{
-    font-family:'Trebuchet MS', sans-serif;
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #f5f3ef 0%, #e8dcc4 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-h1{
+
+header {
+    background: linear-gradient(135deg, #5b2352 0%, #7a3068 100%);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
     display: grid;
     background-color: rgb(91, 35, 82);
-    color:rgb(255, 252, 249);
-    text-shadow: 1px 1px 2px rgba(60, 56, 56, 0.3);
+    color: rgb(255, 252, 249);
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
     text-align: center;
     padding: 20px;
-    margin:0%;
+    margin: 0%;
 }
-h2{
+
+h2 {
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    padding:15px;
-    margin:0%;
-    background-color:beige;
+    padding: 25px;
+    font-size: 2em;
+    margin: 0%;
+    background-color: beige;
 }
-.contenu{
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    margin: none; 
-    padding: 20px; 
-    background-color:beige;
+
+.contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: none;
+    padding: 20px;
+    background-color: beige;
 }
-.paragraphe{
+
+.paragraphe {
     width: 90%;
     padding: 20px;
     margin: 5px;
     border: 2px solid gold;
     border-radius: 10px;
     background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.paragraphe img {
+    display: block;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.score-section {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+    text-align: center;
 }
 
 /* Menu principal */
@@ -43,15 +76,15 @@ h2{
 nav#menu {
     display: flex;
     justify-content: center;
-    background-color:rgb(255, 252, 249);
+    background-color: rgb(255, 252, 249);
     padding: 10px 0;
-    margin:0%;
+    margin: 0%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-top: 2px solid goldenrod;
     border-bottom: 3px solid goldenrod;
 }
 
-nav#menu a { 
+nav#menu a {
     color: rgba(83, 83, 150, 0.756);
     text-decoration: none;
     font-weight: bold;
@@ -62,36 +95,48 @@ nav#menu a {
     font-family: 'Britannic Bold', sans-serif;
 }
 
-nav#menu a:hover { 
-    color:white;
+nav#menu a:hover {
+    color: white;
     background-color: rgba(108, 108, 194, 0.756);
     text-shadow: 1px 1px 2px chocolate;
 }
 
 /*Spécifiques à index*/
 
-#total{ /* bouton du score global*/
-    margin-bottom:20px;
+#total {
+    /* bouton du score global*/
+    margin-bottom: 20px;
 }
-#resetScore{ /* div de réinitialisation du score global*/
-    display: flex; 
-    flex-direction: column; 
-    justify-content:center;
+
+#resetScore {
+    /* div de réinitialisation du score global*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: none; 
-    padding: 20px; 
+    margin: none;
+    padding: 20px;
     font-style: italic;
     color: gray;
     border: 1px dotted whitesmoke;
 }
-#rezero{ /* message de confirmation sur la page*/
+
+#rezero {
+    /* message de confirmation sur la page*/
     margin-top: 10px;
 }
-footer{
-    border-top: 2px solid goldenrod;
+
+
+footer {
     background-color: rgba(108, 108, 194, 0.756);
     text-align: center;
-    padding: 5px;
+    padding: 20px;
+    border-top: 4px solid goldenrod;
+    margin-top: auto;
     position: relative;
-    font-size: 14px;
+}
+
+footer p {
+    margin: 8px 0;
+    font-size: 0.95em;
 }
