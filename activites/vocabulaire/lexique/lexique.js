@@ -14,21 +14,18 @@ draggableImages.forEach(img => {
 const dropzones = document.querySelectorAll(".dropzone, .bg-target");
 
 
-// 允许拖东西进入框里
 dropzones.forEach(zone => {
   zone.addEventListener("dragover", (e) => {
-    e.preventDefault();   // 必须有，不然不能 drop
+    e.preventDefault();  
     zone.style.background = "rgba(180, 220, 255, 0.4)";
   });
 
   zone.addEventListener("dragleave", () => {
-    zone.style.background = "";  // 离开时恢复样式
+    zone.style.background = "";  
   });
 
   zone.addEventListener("drop", (e) => {
     e.preventDefault();
-
-    // 如果这个框里已经有图，不允许再放新的
     if (zone.querySelector("img")) {
       return;
     }
