@@ -15,7 +15,7 @@ const dropzones = document.querySelectorAll(".dropzone, .bg-target");
 dropzones.forEach(zone => {
   zone.addEventListener("dragover", (e) => {
     e.preventDefault();   // 必须有，不然不能 drop
-    zone.style.background = "rgba(180, 220, 255, 0.4)";  
+    zone.style.background = "rgba(180, 220, 255, 0.4)";
   });
 
   zone.addEventListener("dragleave", () => {
@@ -42,9 +42,9 @@ dropzones.forEach(zone => {
 
     zone.classList.remove("correct", "wrong");
     if (zone.dataset.word === word) {
-        zone.classList.add("correct");
+      zone.classList.add("correct");
     } else {
-        zone.classList.add("wrong");
+      zone.classList.add("wrong");
     }
   });
 

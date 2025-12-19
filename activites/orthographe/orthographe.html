@@ -5,7 +5,7 @@
     <title>Exercices d'orthographe</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="..\..\style.css" />
-    <link rel="stylesheet" type="text/css" href="ortho_css.css" />
+    <link rel="stylesheet" type="text/css" href="orthographe.css" />
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                     la case parfaitement exactement.</p>
 
             </div>
-            <div class="audio"><audio controls src="son\dictee.mp3"></audio></div>
+            <div class="audio"><audio controls src="../../assets/son/dictee.mp3"></audio></div>
             <!--audio dans sa propre div pour le css sticky-->
             <div id="txtdict"> <!--identifié car nécessité d'etre précis pour le css et js-->
                 <p>À droite, à gauche, ce ne sont que sapins. La rivière <input type="text" id="reponse1">, capricieuse
@@ -121,16 +121,17 @@
             </div>
         </div>
     </div>
-    <script src="javascript/orthojav.js"></script>
+
     <!--chargement du script en fin d'HTML afin de ne pas provoquer d'erreurs d'ordre de chargement-->
+    <footer> <!--commun à toutes les pages du site afin d'être accessible à tout moment + source pour cet exercice-->
+        <p>Source de la dictée et de sa correction: <a
+                href="https://www.ladictee.fr/contenu/certificat_d_etude/dictees_du_certificat_d_etude/dictee_audio_francais_certificat_etude_1958_Les_vieilles_choses.html">Site
+                Ladictée.fr</a></p>
+        <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong Zhang</p>
+        <p>Etudiantes de M1 IDL UGA, 2025</p>
+        <p>Nous contacter : etu-2025-llasic-nsm1id211@univ-grenoble-alpes.fr</p>
+    </footer>
+    <script src="orthographe.js"></script>
 </body>
-<footer> <!--commun à toutes les pages du site afin d'être accessible à tout moment + source pour cet exercice-->
-    <p>Source de la dictée et de sa correction: <a
-            href="https://www.ladictee.fr/contenu/certificat_d_etude/dictees_du_certificat_d_etude/dictee_audio_francais_certificat_etude_1958_Les_vieilles_choses.html">Site
-            Ladictée.fr</a></p>
-    <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong Zhang</p>
-    <p>Etudiantes de M1 IDL UGA, 2025</p>
-    <p>Nous contacter : etu-2025-llasic-nsm1id211@univ-grenoble-alpes.fr</p>
-</footer>
 
 </html>
