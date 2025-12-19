@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     q5: "sujet"
   };
 
+  // Stockage du score pour calculer le score global //
   function sauvegarderScore() {
     localStorage.setItem(`score_${PAGE_ID}`, scorePage);
   }
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (saved !== null) scorePage = parseInt(saved);
   }
 
+  // Calcul des bonnes réponses //
   document.getElementById("verifier").addEventListener("click", () => {
     scorePage = 0;
     Object.keys(bonnesReponses).forEach(q => {
@@ -32,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sauvegarderScore();
   });
 
+  // Bouton réinitialisation du formulaire //
   document.getElementById("resetPage").addEventListener("click", () => {
     scorePage = 0;
     localStorage.removeItem(`score_${PAGE_ID}`);

@@ -1,3 +1,4 @@
+/* Boutons radio */
 .qcm {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -6,14 +7,14 @@
     align-items: center;
 }
 
+/* Bouton 'vérifier' */
 button {
     border-radius: 3px;
-    border-style:double;
     padding: 5px;
     margin: 10px;
-    background-color: rgb(208, 243, 191);
 }
 
+/* Couleur du surligneur - mots à analyser */
 mark{
     background-color: peachpuff;
 }
