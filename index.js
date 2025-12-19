@@ -24,10 +24,27 @@ function calculerScoreGlobal() {
 
 // Réinitialiser tous les scores
 function reinitialiserScores() {
+
+    // confirmation avant action
+    const confirmation = confirm(
+        "Es-tu sûr(e) de vouloir réinitialiser tous les scores ?\nCette action est irréversible."
+    );
+
+    if (!confirmation) {
+        return; // l'utilisateur annule, rien ne se passe
+    }
+
+    // suppression des scores
     pages.forEach(page => {
         localStorage.removeItem(`score_${page}`);
     });
 
     document.getElementById("score-global").textContent =
         "Tu as 0 bonnes réponses !";
+
+    // message apres action
+    const msg = document.getElementById("resetMessage");
+    msg.textContent = "Tous les scores ont été réinitialisés";
+    msg.style.color = "#4CAF50";
+
 }
