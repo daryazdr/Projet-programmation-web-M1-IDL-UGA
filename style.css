@@ -140,3 +140,23 @@ footer p {
     margin: 8px 0;
     font-size: 0.95em;
 }
+
+/* Bouton Retour en Haut */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #daa520;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#scrollToTop:hover {
+    background-color: #b8860b;
+}

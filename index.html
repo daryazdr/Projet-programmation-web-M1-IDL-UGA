@@ -59,6 +59,13 @@
 
     <script src="index.js"></script>
 
+    <button id="scrollToTop" title="Retour en haut">↑</button>
+    <script>
+        document.getElementById('scrollToTop').onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
 </body>
 
 </html>

@@ -244,14 +244,24 @@
 
 
   </main>
-  <footer>
-    <p>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong Zhang</p>
+
+  <footer> <!--Sources et contacts-->
+    <p><strong>Camille Benoit-Guyod, Ekaterina Leonova, Ombeline Ulbrich-Cloppet, Darya Zdrelyuk, Jiahong
+        Zhang</strong>
+    </p>
     <p>Etudiantes de M1 IDL UGA, 2025</p>
     <p>Nous contacter : etu-2025-llasic-nsm1id211@univ-grenoble-alpes.fr</p>
-    <div class="navig2">
-      <button onclick="location.href"="../../index.html" ; id="back2main">Back to main page</button>
   </footer>
+
   <script src="conjugaison.js"></script>
+
+  <button id="scrollToTop" title="Retour en haut">↑</button>
+  <script>
+    document.getElementById('scrollToTop').onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
 </body>
 
 </html>

@@ -32,8 +32,8 @@ function reinitialiserScores() {
     document.getElementById('rezero').textContent = "Score global : 0";
     alert("Les scores ont été réinitialisés !");
 
-// Écouteur pour le bouton
-document.getElementById('reset').addEventListener('click', () => {
-    reinitialiserScores();
-});
+    // Écouteur pour le bouton
+    document.getElementById('reset').addEventListener('click', () => {
+        reinitialiserScores();
+    });
 }
